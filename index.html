@@ -376,27 +376,70 @@
       margin: 0 auto;
     }
 
-    .partners-inner .section-title { text-align: start; }
-    .partners-inner .section-subtitle { text-align: start; margin-left: 0; margin-right: 0; }
+    .partners-inner .section-title { text-align: center; }
+    .partners-inner .section-subtitle { text-align: center; margin-left: auto; margin-right: auto; }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
 
     .partner-block {
       display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: var(--bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
     }
 
-    .partner-block:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
+    .partner-block:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .partner-block .partner-logo {
+      margin-bottom: 1rem;
+    }
+
+    .partner-block .partner-info {
+      width: 100%;
+    }
+
+    .partner-block .partner-info h3 {
+      font-size: 0.95rem;
+      line-height: 1.35;
+      margin-bottom: 0.35rem;
+    }
+
+    .partner-block .partner-info .role {
+      margin-bottom: 0.5rem;
+    }
+
+    .partner-block .partner-info p:last-child {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .partner-logo {
-      width: 80px;
-      height: 80px;
+      width: 90px;
+      height: 90px;
       flex-shrink: 0;
       background: var(--bg);
       border: 1px solid var(--border);
@@ -757,39 +800,41 @@
       <h2 class="section-title" data-i18n="partners.title">Our Partners</h2>
       <p class="section-subtitle" data-i18n="partners.subtitle">We are proud to work with the following strategic partners:</p>
 
-      <div class="partner-block">
-        <div class="partner-logo" aria-hidden="true">ن</div>
-        <div class="partner-info">
-          <h3 data-i18n="partners.p1.name">Nazm – Subsidiary of Abdulrahman Al-Subaie & Bros</h3>
-          <p class="role" data-i18n="partners.p1.role">Operational & Legal Partner</p>
-          <p data-i18n="partners.p1.desc">Responsible for legal and operational aspects of the platform and compliance with regulations.</p>
+      <div class="partners-grid">
+        <div class="partner-block">
+          <div class="partner-logo partner-logo--dark" aria-hidden="true"><img src="assets/nazm_logo.png" alt="Nazm"></div>
+          <div class="partner-info">
+            <h3 data-i18n="partners.p1.name">Nazm – Subsidiary of Abdulrahman Al-Subaie & Bros</h3>
+            <p class="role" data-i18n="partners.p1.role">Operational & Legal Partner</p>
+            <p data-i18n="partners.p1.desc">Responsible for legal and operational aspects of the platform and compliance with regulations.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="partner-block">
-        <div class="partner-logo partner-logo--dark" aria-hidden="true"><img src="assets/ecit_logo.png" alt="ECIT"></div>
-        <div class="partner-info">
-          <h3 data-i18n="partners.p2.name">ECIT – Information Technology Experts</h3>
-          <p class="role" data-i18n="partners.p2.role">Technology Partner</p>
-          <p data-i18n="partners.p2.desc">Develops and operates the platform’s technical solutions and digital systems.</p>
+        <div class="partner-block">
+          <div class="partner-logo partner-logo--dark" aria-hidden="true"><img src="assets/ecit_logo.png" alt="ECIT"></div>
+          <div class="partner-info">
+            <h3 data-i18n="partners.p2.name">ECIT – Information Technology Experts</h3>
+            <p class="role" data-i18n="partners.p2.role">Technology Partner</p>
+            <p data-i18n="partners.p2.desc">Develops and operates the platform’s technical solutions and digital systems.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="partner-block">
-        <div class="partner-logo" aria-hidden="true">HUB</div>
-        <div class="partner-info">
-          <h3 data-i18n="partners.p3.name">ECIT HUB</h3>
-          <p class="role" data-i18n="partners.p3.role">Innovation Center</p>
-          <p data-i18n="partners.p3.desc">Supports digital project development and collaboration in tech.</p>
+        <div class="partner-block">
+          <div class="partner-logo partner-logo--dark" aria-hidden="true"><img src="assets/ecit_hub_logo.png" alt="ECIT Hub"></div>
+          <div class="partner-info">
+            <h3 data-i18n="partners.p3.name">ECIT HUB</h3>
+            <p class="role" data-i18n="partners.p3.role">Innovation Center</p>
+            <p data-i18n="partners.p3.desc">Supports digital project development and collaboration in tech.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="partner-block">
-        <div class="partner-logo" aria-hidden="true">ك</div>
-        <div class="partner-info">
-          <h3 data-i18n="partners.p4.name">Coffee Sakan</h3>
-          <p class="role" data-i18n="partners.p4.role">Supporting Partner</p>
-          <p data-i18n="partners.p4.desc">Supports events, meetings, and workshops related to the project.</p>
+        <div class="partner-block">
+          <div class="partner-logo partner-logo--dark" aria-hidden="true"><img src="assets/sokon_logo.png" alt="Sokon"></div>
+          <div class="partner-info">
+            <h3 data-i18n="partners.p4.name">Coffee Sakan</h3>
+            <p class="role" data-i18n="partners.p4.role">Supporting Partner</p>
+            <p data-i18n="partners.p4.desc">Supports events, meetings, and workshops related to the project.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -802,8 +847,8 @@
       <ul class="contact-list">
         <li><strong data-i18n="contact.email">Email:</strong> <a href="mailto:info@legaltech.sa">info@legaltech.sa</a></li>
         <li><strong data-i18n="contact.website">Website:</strong> <a href="https://legaltech.sa" target="_blank" rel="noopener">legaltech.sa</a></li>
-        <li><strong data-i18n="contact.phone">Phone:</strong> <a href="tel:+966501252878">+966 50 125 2878</a></li>
-        <li><strong data-i18n="contact.phone2">Alt. phone:</strong> 011 487 6634</li>
+        <li><strong data-i18n="contact.phone">Phone:</strong> <a href="tel:+966501252878"><span dir="ltr">+966 50 125 2878</span></a></li>
+        <li><strong data-i18n="contact.phone2">Alt. phone:</strong> <span dir="ltr">011 487 6634</span></li>
       </ul>
     </div>
   </section>
@@ -833,7 +878,7 @@
           <h4 data-i18n="footer.contact">Contact</h4>
           <ul>
             <li>info@legaltech.sa</li>
-            <li>+966 50 125 2878</li>
+            <li><span dir="ltr">+966 50 125 2878</span></li>
           </ul>
         </div>
       </div>
